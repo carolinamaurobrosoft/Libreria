@@ -3,6 +3,7 @@ import {Image,Text, View, StyleSheet} from 'react-native';
 import { TouchableHighlight } from "react-native-gesture-handler";
 import  Icon  from 'react-native-vector-icons/dist/Ionicons';
 
+
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
@@ -21,11 +22,13 @@ const styles = StyleSheet.create({
     }
 })
 
+const IMAGE_URL = 'https://picsum.photos/200'
+
 export default function BookListItem({book, onPress}){
     return(
         <TouchableHighlight onPress={onPress}>
         <View style={styles.container}>
-            <Image source={{uri: book.cover}} style={styles.image} />
+            <Image source={{uri: IMAGE_URL}} style={styles.image} />
             <Text> {book.title} </Text>
             <Icon name="play-sharp" style={styles.icon}/>
         </View>
